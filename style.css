@@ -1,0 +1,129 @@
+.prevent-select {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  article{
+    width: clamp(200px,50%,600px);
+  }
+body{
+    background-image: url("bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#bg1{
+  position: absolute;
+  z-index: -22;
+  position: static;
+}
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav {
+    opacity: 0.8;
+    box-shadow: 0 0 70px #000000;
+    border: solid rgb(95, 198, 245);
+    border-radius: 40%;
+    position: absolute;
+    top: 8.4%;
+    background: linear-gradient(#061c45,#06456e,#075d79,#09325e);
+    padding: 0px;
+    margin: 0;
+    width: 520px;
+    height: 540px;
+    z-index: 1;
+    animation-name: opacityhoverout;
+    animation-duration: 0.5s;
+    animation-fill-mode: backwards;
+  }
+  @keyframes opacityhoverout {
+    0% {
+      opacity: 1;
+    }
+    100% {
+        opacity: 0.8;
+    }
+  }
+  nav:hover {
+    animation-name: opacity;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes opacity {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 0px;
+    position: relative;
+    left: 15.7%;
+    margin-top: 0%;
+  }
+  
+  nav li:last-child {
+    margin-right: 0;
+  }
+  nav a{
+    text-decoration: none;
+  }
+  #logo{
+    position: absolute;
+    top: 17.5%;
+    left: 20%;
+    margin: 0px;
+    padding: 0px;
+    display: inline; 
+    width: 58%; 
+    height: 31%;
+    z-index: 1;
+  }
+  #exam{
+    position: absolute;
+    top: 335px;
+    left: 10px;
+    display: inline;
+    width: 80px;
+  }
+  #ques{
+    position: absolute;
+    top: 335px;
+    left: 250px;
+    display: inline;
+    width: 91px;
+  }
+  .zoomin{
+	animation-name: zoomout;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes zoomout {
+    0% { transform: scale(1.15); }
+    100%   { transform: scale(1); }
+  }
+  .zoomin:hover{
+    animation-name: zoomin;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes zoomin {
+    0% { transform: scale(1); }
+    100%   { transform: scale(1.15); }
+  }
