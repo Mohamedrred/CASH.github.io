@@ -1,0 +1,26 @@
+
+
+#bird {
+  position: absolute;
+  background-color: yellow;
+  top: 50%;
+  left: 10%;
+}
+
+@keyframes movePipeTop {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes movecoin {
+  0% {
+    right: 20%;
+  }
+  100% {
+    right: 100%;
+  }
+}
