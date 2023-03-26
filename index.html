@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #70c5ce;
+            margin: 0;
+            padding: 0;
+            height: 100dvh;
+            overflow: hidden;
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+		#game-con {
+            display: none;
+			background-color: #70c5ce;
+			position: relative;
+			border: 3px solid black;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50% , -50%);
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            z-index: 1;
+		}
+	</style>
+</head>
+<body>
+    <div id="startmenu">
+        <button id="startbtn">START</button>
+        <ul id="menu">
+            <li>You can withdraw your money when you reach $4.
+                <br>(If you win more than $3, you can only withdraw $4. 
+                <br>Please reload the page to play again.)</li>
+            <li>Press Shift first, then &#8593;, &#8592;, &#8594;, or &#8595; on the keyboard to 
+                <br>
+                speed up your cube movements.
+            </li>
+            <li>Recommended for PC.</li>
+            <li>Record your run and your BTC wallet address, and send<br> them to the email address on the withdrawal page.</li>
+        </ul>
+    </div>
+    <div id="game-con">
+        <div id="bird"></div>
+        <button class="controlerbtns" id="upbtn">&#8593;</button>
+        <button class="controlerbtns" id="leftbtn">&#8592;</button>
+        <button class="controlerbtns" id="downbtn">&#8595;</button>
+        <button class="controlerbtns" id="rightbtn">&#8594;</button>
+        <button class="controlerbtns" id="shiftkey">SPEED</button>
+        <button id="withdrawPAGEbtn"><a id="withdrawPAGEbtndec" href="withrew.html">withdraw IF YOU GOT 4$</a></button>
+    </div>
+    <script src="tests.js"></script>
+    <script src="btnscontrole.js"></script>
+    <script src="localstorege.js"></script>
+</body>
+</html>

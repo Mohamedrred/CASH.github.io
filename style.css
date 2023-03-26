@@ -1,0 +1,134 @@
+#gmail-con {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 100%;
+}
+
+#gmail {
+  position: absolute;
+  font-size: 50px;
+}
+
+#startmenu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 100%;
+}
+
+#startbtn {
+  position: absolute;
+  background-color: rgb(46, 184, 46);
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 3px solid black;
+  position: absolute;
+  width: 9%;
+  height: 9%;
+  cursor: pointer;
+  top: 30%;
+}
+
+#menu {
+  position: absolute;
+  top: 40%;
+}
+
+#menutt {
+  position: absolute;
+  color: black;
+  
+}
+
+#startbtn:hover {
+  background-color: rgb(36, 146, 36);
+}
+
+#bird {
+  position: absolute;
+  background-color: yellow;
+  top: 50%;
+  left: 10%;
+}
+
+@keyframes movePipeTop {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes movecoin {
+  0% {
+    right: 20%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.controlerbtns {
+  background-color: rgb(46, 184, 46);
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 3px solid black;
+  position: absolute;
+  width: 9%;
+  height: 9%;
+  top: 75%;
+  right: 0%;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.controlerbtns:hover {
+  background-color: rgb(36, 146, 36);
+}
+
+#upbtn {
+  top: 65%;
+  right: 8%;
+}
+
+#leftbtn {
+  top: 75%;
+  right: 16%;
+}
+
+#downbtn {
+  top: 85%;
+  right: 8%;
+}
+
+#shiftkey {
+  top: 87%;
+  right: 22%;
+}
+
+#withdrawPAGEbtn {
+  background-color: rgb(46, 184, 46);
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 3px solid black;
+  position: absolute;
+  z-index: 3;
+  cursor: pointer;
+}
+
+#withdrawPAGEbtndec {
+  text-decoration: none;
+  color: black;
+}
+
+#withdrawPAGEbtn:hover {
+  background-color: rgb(36, 146, 36);
+}
