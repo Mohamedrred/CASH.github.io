@@ -93,7 +93,7 @@ function generatePipes() {
     coin.style.height = '35px';
     coin.style.borderRadius = '50%'
     coin.style.position = 'absolute';
-    coin.style.top = Math.floor(Math.random() * 90 + 1) + '%';
+    coin.style.top = Math.floor(Math.random() * 70 + 1) + '%';
     coin.style.right = Math.floor(Math.random() * 10 + 20) + '%';
     coin.style.animation = 'movecoin 5s linear infinite';
     coin.textContent = cointext + '$';
