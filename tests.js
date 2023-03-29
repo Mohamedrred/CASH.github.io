@@ -57,14 +57,26 @@ function checkCollision(coin) {
 };
 
 function checkCollision2(pipeTop) {
-    const obj1Rect1 = pipeTop.getBoundingClientRect();
+    const obj1Rect2 = pipeTop.getBoundingClientRect();
     const obj2Rect = bird.getBoundingClientRect();
-    const isTouching1 = !(obj1Rect1.right < obj2Rect.left ||
-        obj1Rect1.left > obj2Rect.right ||
-        obj1Rect1.bottom < obj2Rect.top ||
-        obj1Rect1.top > obj2Rect.bottom);
+    const isTouching1 = !(obj1Rect2.right < obj2Rect.left ||
+        obj1Rect2.left > obj2Rect.right ||
+        obj1Rect2.bottom < obj2Rect.top ||
+        obj1Rect2.top > obj2Rect.bottom);
     return isTouching1;
 };
+
+function checkCollision3(speedcoin) {
+    const obj1Rect3 = speedcoin.getBoundingClientRect();
+    const obj2Rect = bird.getBoundingClientRect();
+    const isTouching2 = !(obj1Rect3.right < obj2Rect.left ||
+        obj1Rect3.left > obj2Rect.right ||
+        obj1Rect3.bottom < obj2Rect.top ||
+        obj1Rect3.top > obj2Rect.bottom);
+    return isTouching2;
+};
+
+
 const gameCon = document.getElementById('game-con');
 const score = document.createElement('label')
     score.style.position = 'absolute';
@@ -86,17 +98,22 @@ function generatePipes() {
     const pipe = document.createElement('div');
     const gameCon = document.getElementById('game-con');
     const coin = document.createElement('div');
-    const cointext = Math.floor(Math.random() * 6 + 0.1) / 200;
+    const cointext = Math.floor(Math.random() * 9) / 1000;
 
     coin.style.backgroundColor = 'yellow';
     coin.style.width = '35px';
     coin.style.height = '35px';
     coin.style.borderRadius = '50%'
     coin.style.position = 'absolute';
+    coin.style.display = 'flex';
+    coin.style.alignItems = 'center';
+    coin.style.textAlign = 'center';
+    coin.style.fontSize = '16px';
+    coin.style.fontWeight = 'bold';
     coin.style.top = Math.floor(Math.random() * 70 + 1) + '%';
     coin.style.right = Math.floor(Math.random() * 10 + 20) + '%';
     coin.style.animation = 'movecoin 5s linear infinite';
-    coin.textContent = cointext + '$';
+    coin.textContent = "+" + cointext + '$';
 
     const pipeTop = document.createElement('div');
 
@@ -108,10 +125,6 @@ function generatePipes() {
     pipeTop.style.right = '0%';
     pipeTop.style.animation = 'movePipeTop 6s linear infinite';
 
-    pipe.appendChild(pipeTop);
-    pipe.appendChild(coin);
-
-    gameCon.appendChild(pipe);
 
     const collisionInterval = setInterval(function() {
         if (checkCollision(coin)) {
@@ -120,19 +133,53 @@ function generatePipes() {
         }
     }, 10);
 
-    const collisionIntervall = setInterval(function() {
+    const collisionInterval2 = setInterval(function() {
         if (checkCollision2(pipeTop)) {
             scorecontre.textContent = 0 + "$";
         }
     }, 10);
 
+    const speedcoin = document.createElement('div');
+    speedcoin.style.backgroundColor = 'red';
+    speedcoin.style.width = '35px';
+    speedcoin.style.height = '35px';
+    speedcoin.style.borderRadius = '50%';
+    speedcoin.style.position = 'absolute';
+    speedcoin.style.display = 'flex';
+    speedcoin.style.justifyContent = 'center';
+    speedcoin.style.alignItems = 'center';
+    speedcoin.style.textAlign = 'center';
+    speedcoin.style.fontSize = '16px';
+    speedcoin.style.fontWeight = 'bold';
+    const speedcointext = Math.floor(Math.random() * 5) / 1000;
+    speedcoin.textContent = "-" + speedcointext + "$";
+    speedcoin.style.top = Math.floor(Math.random() * 70 + 1) + '%';
+    speedcoin.style.right = Math.floor(Math.random() * 10 + 20) + '%';
+    speedcoin.style.animation = 'movecoin 5s linear infinite';
+
+
+    const collisionInterval3 = setInterval(function() {
+        if (checkCollision3(speedcoin)) {
+            speedcoin.remove();
+            scorecontre.textContent = parseFloat(scorecontre.textContent) - speedcointext + "$";
+        }
+    }, 10);
+
+    pipe.appendChild(pipeTop);
+    pipe.appendChild(coin);
+    pipe.appendChild(speedcoin);
+
+    gameCon.appendChild(pipe);
+
     setTimeout(function() {
         pipe.remove();
         clearInterval(collisionInterval);
-        clearInterval(collisionIntervall);
+        clearInterval(collisionInterval2);
+        clearInterval(collisionInterval3);
     }, 5899);
     setTimeout(function() {
         coin.remove();
+        speedcoin.remove();
     }, 4899);
 }
 
